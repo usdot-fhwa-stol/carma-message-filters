@@ -44,14 +44,14 @@ install(
 
 install(
   DIRECTORY "include/"
-  DESTINATION include/${PROJECT_NAME}
+  DESTINATION include/message_filters
 )
 
 ament_python_install_package(${PROJECT_NAME}
   PACKAGE_DIR src/${PROJECT_NAME})
 
 # Export old-style CMake variables
-ament_export_include_directories("include/${PROJECT_NAME}")
+ament_export_include_directories("include/message_filters")
 ament_export_libraries(${PROJECT_NAME})
 
 # Export modern CMake targets
