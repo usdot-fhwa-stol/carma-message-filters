@@ -40,7 +40,7 @@
 #define RCLCPP_AVOID_DEPRECATIONS_FOR_UNIT_TESTS 1
 #include <rclcpp/rclcpp.hpp>
 #include <rclcpp_lifecycle/lifecycle_node.hpp>
-#include "message_filters/subscriber.h"
+#include "message_filters/subscriber.hpp"
 #include "message_filters/chain.h"
 #include "sensor_msgs/msg/imu.hpp"
 
