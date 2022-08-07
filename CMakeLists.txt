@@ -44,7 +44,7 @@ install(
 
 install(
   DIRECTORY "include/"
-  DESTINATION include/"message_filters"
+  DESTINATION include/message_filters
 )
 
 ament_python_install_package(${PROJECT_NAME}
