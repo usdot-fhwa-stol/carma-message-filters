@@ -39,7 +39,7 @@
 #include <random>
 
 #include <rclcpp/rclcpp.hpp>
-#include "message_filters/subscriber.hpp"
+#include "message_filters/subscriber.h"
 #include "message_filters/time_sequencer.h"
 #include "message_filters/time_synchronizer.h"
 #include "message_filters/chain.h"
