@@ -27,8 +27,8 @@ if(WIN32)
     PRIVATE "MESSAGE_FILTERS_BUILDING_DLL")
 endif()
 target_include_directories(${PROJECT_NAME} PUBLIC
-  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
-  "$<INSTALL_INTERFACE:include/message_filters>")
+  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/>"
+  "$<INSTALL_INTERFACE:include/>")
 
 ament_target_dependencies(${PROJECT_NAME}
   "rclcpp"
@@ -43,15 +43,15 @@ install(
 )
 
 install(
-  DIRECTORY "include/"
-  DESTINATION include/message_filters
+  DIRECTORY "include/message_filters/"
+  DESTINATION include/${PROJECT_NAME}
 )
 
 ament_python_install_package(${PROJECT_NAME}
   PACKAGE_DIR src/${PROJECT_NAME})
 
 # Export old-style CMake variables
-ament_export_include_directories("include/message_filters")
+ament_export_include_directories("include/${PROJECT_NAME}")
 ament_export_libraries(${PROJECT_NAME})
 
 # Export modern CMake targets
