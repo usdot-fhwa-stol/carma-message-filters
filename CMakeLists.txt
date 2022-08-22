@@ -2,6 +2,11 @@ cmake_minimum_required(VERSION 3.5)
 
 project(message_filters_humble)
 
+# Declare carma package and check ROS version
+find_package(carma_cmake_common REQUIRED)
+carma_check_ros_version(2)
+carma_package()
+
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 14)
@@ -22,8 +27,8 @@ if(WIN32)
     PRIVATE "MESSAGE_FILTERS_BUILDING_DLL")
 endif()
 target_include_directories(${PROJECT_NAME} PUBLIC
-  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
-  "$<INSTALL_INTERFACE:include/${PROJECT_NAME}>")
+  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/>"
+  "$<INSTALL_INTERFACE:include/>")
 
 ament_target_dependencies(${PROJECT_NAME}
   "rclcpp"
@@ -38,7 +43,7 @@ install(
 )
 
 install(
-  DIRECTORY "include/"
+  DIRECTORY "include/message_filters/"
   DESTINATION include/${PROJECT_NAME}
 )
 
